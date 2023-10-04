@@ -37,6 +37,7 @@ class DiscoverScreen extends StatelessWidget {
             ),
 
             // Dish Collections (you can customize this)
+            Text('This Page will have trending dishes.'),
             Container(
               height: 200, // Adjust the height as needed
               child: ListView.builder(
@@ -44,8 +45,8 @@ class DiscoverScreen extends StatelessWidget {
                 itemCount: 5, // Replace with your collection count
                 itemBuilder: (context, index) {
                   return Card(
-                    // Display collection data here
                   );
+
                 },
               ),
             ),

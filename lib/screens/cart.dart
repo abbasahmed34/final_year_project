@@ -6,7 +6,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopping Cart'),
+        title: const Text('Food Cart'),
         backgroundColor: Theme.of(context).primaryColor, // Use the primary color from the theme
       ),
       body: ListView.builder(
