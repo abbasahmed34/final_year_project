@@ -1,5 +1,6 @@
+import 'package:final_year_project/screens/chat.dart';
 import 'package:final_year_project/screens/user_listings.dart';
-import 'package:final_year_project/screens/user_profile.dart';
+import 'package:final_year_project/screens/favourites.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -63,8 +64,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.orange,
-            icon: Icon(Icons.person, color: Colors.white),
-            label: 'Profile',
+            icon: Icon(Icons.favorite_border, color: Colors.white),
+            label: 'Favourites',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.orange,
@@ -105,8 +106,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     ),),
                     leading: Icon(Icons.list_outlined,size: 26,),
                   ),
-                  const ListTile(
-                    title: Text("Messages",style: TextStyle(
+                  ListTile(
+                    onTap: (){
+                      // Navigate to the new screen when the ListTile is tapped
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChatScreen(), // Replace YourNextScreen with the screen you want to navigate to
+                      ));
+                    },
+                    title: const Text("Messages",style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16
 

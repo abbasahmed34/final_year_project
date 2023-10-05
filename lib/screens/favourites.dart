@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text('Favourites'),
         backgroundColor: Theme.of(context).primaryColor, // Set app bar background color
       ),
       body: const Padding(
@@ -16,9 +16,9 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Name: Abbas'),
-            Text('Email: abc@gmail.com'),
-            Text('Location: abc'),
+            Text('Favourite Item 1'),
+            Text('Favourite Item 2'),
+            Text('Favourite Item 3'),
             // Add more user profile information as needed
           ],
         ),

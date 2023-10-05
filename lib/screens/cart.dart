@@ -13,7 +13,7 @@ class CartScreen extends StatelessWidget {
         itemCount: 0, // Replace with the number of cart items
         itemBuilder: (context, index) {
           // Replace this with logic to display cart items
-          return ListTile(
+          return const ListTile(
             leading: Icon(Icons.fastfood), // Replace with item image
             title: Text('Item Name'), // Replace with item name
             subtitle: Text('Item Description'), // Replace with item description
@@ -36,7 +36,7 @@ class CartScreen extends StatelessWidget {
                   primary: Theme.of(context).primaryColor, // Use the primary color from the theme
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 ),
-                child: Text(
+                child: const Text(
                   'Checkout',
                   style: TextStyle(
                     fontSize: 18,
