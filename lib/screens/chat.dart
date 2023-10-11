@@ -1,3 +1,4 @@
+//lib/screens/chat.dart
 import 'package:final_year_project/widgets/chat_messages.dart';
 import 'package:final_year_project/widgets/new_message.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.orange,
+          backgroundColor: Theme.of(context).primaryColor,
           title: const Text(
             'Chat Messages',
           ),

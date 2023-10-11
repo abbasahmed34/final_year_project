@@ -1,4 +1,4 @@
-// lib/screens/details_screen.dart
+// lib/screens/user_listings_details.dart
 import 'package:flutter/material.dart';
 import 'package:final_year_project/models/food_item.dart';
 
@@ -32,7 +32,7 @@ class DetailsScreen extends StatelessWidget {
                 // You can manage the cart state using your preferred state management solution.
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange, // Customize the button color
+                primary: Theme.of(context).primaryColor, // Customize the button color
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               ),
               child: const Text(

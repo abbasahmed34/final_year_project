@@ -6,3 +6,4 @@ class UserData {
 
   UserData({required this.name, required this.email, required this.location});
 }
+

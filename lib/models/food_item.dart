@@ -1,3 +1,4 @@
+// lib/models/food_item.dart
 class FoodItem {
   final String imageUrl;
   final String name;

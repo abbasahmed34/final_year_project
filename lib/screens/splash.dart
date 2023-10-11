@@ -1,3 +1,4 @@
+//lib/screens/splash.dart
 import 'package:final_year_project/main.dart';
 import 'package:final_year_project/screens/discover.dart';
 import 'package:flutter/material.dart';

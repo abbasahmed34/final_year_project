@@ -1,5 +1,5 @@
+//lib/screens/auth.dart
 import 'dart:io';
-import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_year_project/widgets/user_image_picker.dart';
@@ -92,7 +92,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -180,7 +180,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             ElevatedButton(
                               onPressed: _submit,
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.orange,
+                                backgroundColor: Theme.of(context).primaryColor,
                               ),
                               child: Text(_isLogin ? 'Login' : 'Signup'),
                             ),
@@ -192,8 +192,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 });
                               },
                               style: TextButton.styleFrom(
-                                primary: Colors
-                                    .orange, // Change the text color to orange
+                                primary: Theme.of(context).primaryColor, // Change the text color to orange
                               ),
                               child: Text(_isLogin
                                   ? 'Create an account'

@@ -1,3 +1,4 @@
+//lib/main.dart
 import 'package:final_year_project/screens/bottom_nav_bar.dart';
 import 'package:final_year_project/screens/splash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +7,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 import 'package:final_year_project/screens/auth.dart';
+
+
+final ThemeData myTheme = ThemeData(
+  primaryColor: Color(0xfff97930), // Primary color
+  colorScheme: ColorScheme.light().copyWith(
+    primary: Color(0xfff97930), // Primary color
+    secondary: Colors.white, // Accent color
+  ),
+  fontFamily: 'Roboto', // Font family
+);
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,13 +41,7 @@ class _AppState extends State<App> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlutterChat',
-      theme: ThemeData(
-        primaryColor: Colors.orange, // Replace with your chosen primary color
-        colorScheme: ThemeData.light().colorScheme.copyWith(
-          secondary: Colors.white, // Replace with your chosen accent color
-        ),
-        fontFamily: 'Roboto', // Customize the font family as needed
-      ),
+      theme: myTheme,
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (ctx, snapshot){

@@ -1,8 +1,8 @@
+//lib/screens/favourites.dart
 import 'package:flutter/material.dart';
-import 'package:final_year_project/models/user.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class FavouritesScreen extends StatelessWidget {
+  const FavouritesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

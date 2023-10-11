@@ -1,3 +1,4 @@
+//lib/widgets/message_bubble.dart
 import 'package:flutter/material.dart';
 
 // A MessageBubble for showing a single chat message on the ChatScreen.
@@ -11,7 +12,7 @@ class MessageBubble extends StatelessWidget {
     required this.isMe,
   }) : isFirstInSequence = true;
 
-  // Create a amessage bubble that continues the sequence.
+  // Create a message bubble that continues the sequence.
   const MessageBubble.next({
     super.key,
     required this.message,
@@ -51,10 +52,12 @@ class MessageBubble extends StatelessWidget {
             // Align user image to the right, if the message is from me.
             right: isMe ? 0 : null,
             child: CircleAvatar(
+
+
               backgroundImage: NetworkImage(
                 userImage!,
               ),
-              backgroundColor: theme.colorScheme.primary.withAlpha(180),
+              backgroundColor: Colors.red,
               radius: 23,
             ),
           ),
@@ -67,7 +70,9 @@ class MessageBubble extends StatelessWidget {
             mainAxisAlignment:
             isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
             children: [
+
               Column(
+
                 crossAxisAlignment:
                 isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                 children: [
@@ -94,7 +99,7 @@ class MessageBubble extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isMe
                           ? Colors.grey[300]
-                          : theme.colorScheme.secondary.withAlpha(200),
+                          : Colors.greenAccent,
                       // Only show the message bubble's "speaking edge" if first in
                       // the chain.
                       // Whether the "speaking edge" is on the left or right depends
@@ -131,7 +136,7 @@ class MessageBubble extends StatelessWidget {
                         height: 1.3,
                         color: isMe
                             ? Colors.black87
-                            : theme.colorScheme.onSecondary,
+                            : Colors.black,
                       ),
                       softWrap: true,
                     ),
