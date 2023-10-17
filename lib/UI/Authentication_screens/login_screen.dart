@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: height*0.4,
+                      height: height*0.34,
                       child: const Image(
                         image: AssetImage("assets/images/logo.png"),
                       ),
@@ -197,7 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             );
           }),

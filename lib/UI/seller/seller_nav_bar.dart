@@ -3,6 +3,7 @@ import 'package:final_year_project/UI/seller/seller_add_listings.dart';
 import 'package:final_year_project/resources/components/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 import '../bottom_nav_bar.dart';
 import '../chat.dart';
@@ -24,6 +25,14 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
     ListingsScreen(),
     AddListingScreen(),
   ];
+
+  void _shareApp() {
+    final RenderBox box = context.findRenderObject() as RenderBox;
+    Share.share(
+      'Check out this awesome app: HomeChef FoodLink',
+      sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+    );
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +64,7 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
               Icons.add,
               color: _currentIndex == 1 ? AppColors.mainColor : Colors.grey,
             ),
-            label: 'Cart',
+            label: 'Add Listings',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -109,7 +118,7 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
                   "Return Buyer Mode",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.list_outlined,
                   size: 26,
                 ),
@@ -126,7 +135,7 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
                   "Messages",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.message_rounded,
                   size: 26,
                 ),
@@ -135,11 +144,11 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
                 onTap: () {
                   FirebaseAuth.instance.signOut();
                 },
-                title: Text(
+                title: const Text(
                   "Logout",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.logout,
                   size: 26,
                 ),
@@ -148,12 +157,13 @@ class _SellerBottomNavBarState extends State<SellerBottomNavBar> {
                 height: 30,
               ),
               const Divider(),
-              const ListTile(
-                title: Text(
+              ListTile(
+                onTap: _shareApp,
+                title: const Text(
                   "Share",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.share,
                   size: 26,
                 ),

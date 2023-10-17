@@ -14,7 +14,7 @@ class ListingsScreen extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection('listings').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return CircularProgressIndicator(); // Loading indicator
+            return Center(child: CircularProgressIndicator()); // Loading indicator
           }
 
           // Get the listings data from Firestore

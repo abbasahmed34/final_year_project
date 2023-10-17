@@ -53,7 +53,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           children: [
             Container(
               color: Theme.of(context).primaryColor,
-              height: height * 0.25,
+              height: height * 0.24,
               child: Padding(
                 padding: EdgeInsets.only(top: height * 0.07 , left: width * 0.04),
                 child: Column(

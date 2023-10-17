@@ -29,7 +29,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final List<Widget> _screens = [
-    //const SplashScreen(),
     DiscoverScreen(),
     ListingsScreen(),
     ChefsOrSellers(),
@@ -63,7 +62,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(
               Icons.explore,
               color: _currentIndex == 0 ? AppColors.mainColor : Colors.grey,
@@ -71,7 +69,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Discover',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(
               Icons.fastfood,
               color: _currentIndex == 1 ? AppColors.mainColor : Colors.grey,
@@ -79,15 +76,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Listings',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(
-              Icons.man,
+              Icons.person,
               color: _currentIndex == 2 ? AppColors.mainColor : Colors.grey,
             ),
-            label: 'Cart',
+            label: 'Sellers',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(
               Icons.favorite_border,
               color: _currentIndex == 3 ? AppColors.mainColor : Colors.grey,
@@ -95,7 +90,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Favourites',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(
               Icons.menu,
               color: _currentIndex == 4 ? AppColors.mainColor : Colors.grey,
@@ -103,6 +97,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'More', // Change label as needed
           ),
         ],
+        selectedItemColor: AppColors.mainColor,
       ),
       endDrawer: Drawer(
           child: SingleChildScrollView(
@@ -254,11 +249,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 const Divider(),
                 ListTile(
                   onTap: _shareApp,
-                  title: Text(
+                  title: const Text(
                     "Share",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.share,
                     size: 26,
                   ),
