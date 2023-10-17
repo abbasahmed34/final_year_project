@@ -7,13 +7,18 @@ class DiscoverScreen extends StatefulWidget {
 }
 
 class _DiscoverScreenState extends State<DiscoverScreen> {
+
+
+
   Widget categoriesContainer({required String image, required String name}) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Container(
           margin: const EdgeInsets.only(left: 10),
-          height: 70,
-          width: 70,
+          width: width * 0.16,
+          height: width * 0.16,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(image),
@@ -22,8 +27,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: height * 0.01,
         ),
         Text(
           name,
@@ -38,6 +43,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -45,9 +53,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           children: [
             Container(
               color: Theme.of(context).primaryColor,
-              height: 200,
+              height: height * 0.25,
               child: Padding(
-                padding: const EdgeInsets.only(top: 70, left: 20),
+                padding: EdgeInsets.only(top: height * 0.07 , left: width * 0.04),
                 child: Column(
                   children: [
                     Row(
@@ -55,19 +63,19 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Colors.grey,
+                            color: Colors.grey[400],
                           ),
-                          width: 50,
-                          height: 50,
-                          child: Center(child: Text('AA')),
+                          width: width * 0.15,
+                          height: width * 0.15,
+                          child: const Center(child: Text('AA')),
                         ),
-                        const SizedBox(
-                          width: 10,
+                        SizedBox(
+                          width: width * 0.03,
                         ),
-                        const Column(
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Deliver to Current Location',
                               style: TextStyle(
                                 color: Colors.white,
@@ -75,9 +83,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: height * 0.005,
                             ),
-                            Text(
+                            const Text(
                               'Select Delivery Time Slot',
                               style: TextStyle(
                                 color: Colors.white,
@@ -88,20 +96,22 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 15,
+                    SizedBox(
+                      height: height * 0.019,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 20),
+                      padding: EdgeInsets.only(right: width * 0.05),
                       child: Container(
                         decoration: BoxDecoration(
                           color:
-                              Colors.white, // Set the background color to white
+                          Colors.white, // Set the background color to white
                           borderRadius:
-                              BorderRadius.circular(10), // Add rounded corners
+                          BorderRadius.circular(10), // Add rounded corners
                         ),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16), // Add padding to the container
+                        padding: EdgeInsets.symmetric(
+                            horizontal: width * 0.02,
+                            vertical: height * 0.002,
+                        ),
                         child: const TextField(
                           decoration: InputDecoration(
                             hintText: 'Search for dishes...',
@@ -164,16 +174,16 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(left: 8),
-                        width: 375,
-                        height: 160,
+                        width: width * 0.9,
+                        height: height * 0.175,
                         child: const Card(
                           color: Colors.orangeAccent,
                           child: Center(child: Text('DISCOVER MEAL PLANS')),
                         ),
                       ),
                       Container(
-                        width: 375,
-                        height: 160,
+                        width: width * 0.9,
+                        height: height * 0.175,
                         child: const Card(
                           color: Colors.blueAccent,
                           child: Center(
@@ -182,8 +192,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                         ),
                       ),
                       Container(
-                        width: 375,
-                        height: 160,
+                        width: width * 0.9,
+                        height: height * 0.175,
                         child: const Card(
                           color: Colors.deepPurpleAccent,
                           child: Center(
@@ -221,43 +231,56 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     child: Row(
                       children: [
                         TextButton(
-                          onPressed: () {},
-                          child: Text('Button 1'),
+                          onPressed: () {
+                            // Column(children: [
+                            //   Container(
+                            //     width: double.infinity,
+                            //     height: 150,
+                            //     child: const Card(
+                            //       color: Colors.grey,
+                            //       child: Text('ASDF'),
+                            //     ),
+                            //   ),
+                            // ],);
+                          },
+                          child: Text('Mains'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text('Button 2'),
+                          child: Text('Sides'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text('Button 3'),
+                          child: Text('Dessert'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text('Button 4'),
+                          child: Text('Snack'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text('Button 5'),
+                          child: Text('Drinks'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: () {},
-                          child: Text('Button 6'),
+                          onPressed: () {
+
+                          },
+                          child: Text('Condiments'),
                         ),
                       ],
                     ),

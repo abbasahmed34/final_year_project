@@ -1,18 +1,19 @@
 //lib/main.dart
-import 'package:final_year_project/screens/bottom_nav_bar.dart';
-import 'package:final_year_project/screens/splash.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:final_year_project/UI/splash.dart';
+import 'package:final_year_project/view_model/provider_auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'Utils/Routes/routes_logic.dart';
+import 'Utils/Routes/routes_names.dart';
 import 'firebase_options.dart';
 
-import 'package:final_year_project/screens/auth.dart';
 
 
 final ThemeData myTheme = ThemeData(
-  primaryColor: Color(0xfff97930), // Primary color
-  colorScheme: ColorScheme.light().copyWith(
-    primary: Color(0xfff97930), // Primary color
+  primaryColor: const Color(0xfff97930), // Primary color
+  colorScheme: const ColorScheme.light().copyWith(
+    primary: const Color(0xfff97930), // Primary color
     secondary: Colors.white, // Accent color
   ),
   fontFamily: 'Roboto', // Font family
@@ -38,23 +39,17 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_)=> ProviderService())
+    ],
+        child: MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'FlutterChat',
+      title: 'HomeChef FoodLink',
       theme: myTheme,
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (ctx, snapshot){
-          if(snapshot.connectionState == ConnectionState.waiting){
-            return const SplashScreen();
-          }
-          if (snapshot.hasData){
-            return const BottomNavBar();
-          }
-
-          return const AuthScreen();
-        },
-      ),
+      initialRoute: RoutesName.splashscreen,
+      onGenerateRoute: Routes.generateRoutes,
+      home: SplashScreen(),
+    ),
     );
   }
 }

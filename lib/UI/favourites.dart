@@ -8,6 +8,7 @@ class FavouritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('Favourites'),
         backgroundColor: Theme.of(context).primaryColor, // Set app bar background color
       ),
