@@ -232,16 +232,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       children: [
                         TextButton(
                           onPressed: () {
-                            // Column(children: [
-                            //   Container(
-                            //     width: double.infinity,
-                            //     height: 150,
-                            //     child: const Card(
-                            //       color: Colors.grey,
-                            //       child: Text('ASDF'),
-                            //     ),
-                            //   ),
-                            // ],);
                           },
                           child: Text('Mains'),
                         ),
